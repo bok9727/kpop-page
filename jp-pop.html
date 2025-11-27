@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>J-POP Mosaic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: {
+                pink: "#ff4fd8",
+                purple: "#b26bff",
+                blue: "#5be4ff",
+              },
+              ocean: {
+                blue: "#3b82f6",
+                teal: "#2dd4bf",
+              },
+              sunset: {
+                yellow: "#ffe066",
+                orange: "#ff8e72",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --fade-distance: 24px;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(var(--fade-distance));
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeInUp 0.9s ease forwards;
+      }
+      .fade-delay-1 {
+        animation-delay: 0.15s;
+      }
+      .fade-delay-2 {
+        animation-delay: 0.3s;
+      }
+      .fade-delay-3 {
+        animation-delay: 0.45s;
+      }
+      .fade-delay-4 {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen text-white px-4 py-12"
+    style="
+      background-image: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.25), transparent 50%),
+        radial-gradient(circle at 80% 0%, rgba(255, 224, 102, 0.2), transparent 55%),
+        linear-gradient(135deg, #020617, #0f172a 60%, #1e1b4b);
+    "
+  >
+    <nav
+      class="max-w-6xl mx-auto mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between bg-white/5 border border-white/10 rounded-2xl px-6 py-4 backdrop-blur-2xl shadow-[0_20px_70px_-40px_rgba(59,130,246,0.7)] fade-in"
+    >
+      <a href="index.html" class="text-xl font-semibold text-white flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sunset-yellow text-slate-900 text-sm font-bold">K</span>
+        POP Mosaic
+      </a>
+      <div class="flex flex-wrap gap-3 text-sm font-semibold text-white/80">
+        <a href="index.html" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">K-POP</a>
+        <a href="us-pop.html" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">미국 팝</a>
+        <a href="uk-pop.html" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">영국 팝</a>
+        <a href="jp-pop.html" class="px-4 py-2 rounded-full border border-white/20 bg-white/15 text-white transition">일본 팝</a>
+        <a href="latin-pop.html" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">라틴 팝</a>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto space-y-12">
+      <header
+        class="rounded-[32px] bg-white/5 border border-white/10 px-10 py-12 shadow-[0_35px_120px_-45px_rgba(59,130,246,0.8)] space-y-8 backdrop-blur-2xl fade-in"
+      >
+        <p class="inline-flex items-center gap-2 text-sm tracking-[0.3em] uppercase text-white/80">
+          Tokyo Popverse
+          <span class="w-2 h-2 rounded-full bg-neon-blue animate-ping"></span>
+        </p>
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-2/3 space-y-5 text-center lg:text-left">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-snug">
+              J-POP Spotlight
+              <span class="block text-sunset-yellow">아이돌 · 밴드 · 애니송의 공존</span>
+            </h1>
+            <p class="text-lg text-white/80">
+              시부야계, 시티팝, 애니메이션 음악, 아이돌 프로젝트 등 일본 팝은 다층적 콘텐츠와 정교한 서사로 팬덤을 확장해 왔습니다. 오리콘 차트와 니코니코, 애니메이션
+              이벤트가 교차하는 하이브리드 문화입니다.
+            </p>
+            <div class="flex flex-wrap gap-3 text-sm font-semibold justify-center lg:justify-start">
+              <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl">시티팝</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl">아이돌 시스템</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl">애니송 붐</span>
+            </div>
+          </div>
+          <figure
+            class="lg:w-1/3 w-full bg-white/10 border border-white/20 rounded-2xl p-4 backdrop-blur-2xl shadow-[0_30px_80px_-40px_rgba(255,255,255,0.6)] text-center"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg"
+              alt="일본 국기 히노마루"
+              class="w-full rounded-xl border border-white/30 shadow-inner shadow-black/20"
+            />
+            <figcaption class="mt-3 text-sm text-white/70">일본 · 하이브리드 팝 문화</figcaption>
+          </figure>
+        </div>
+      </header>
+
+      <section class="grid md:grid-cols-3 gap-6 fade-in fade-delay-1">
+        <article class="rounded-3xl bg-white/5 border border-white/10 p-6 space-y-3 backdrop-blur-2xl shadow-[0_25px_70px_-40px_rgba(59,130,246,0.6)]">
+          <p class="text-xs tracking-[0.4em] uppercase text-ocean-teal">Concept</p>
+          <h3 class="text-xl font-semibold">프로젝트型 아티스트</h3>
+          <p class="text-sm text-white/70">아이돌·보컬로이드·버추얼 아티스트 등 다양한 형태가 공존합니다.</p>
+        </article>
+        <article class="rounded-3xl bg-white/5 border border-white/10 p-6 space-y-3 backdrop-blur-2xl shadow-[0_25px_80px_-45px_rgba(255,79,216,0.6)]">
+          <p class="text-xs tracking-[0.4em] uppercase text-neon-pink">Media</p>
+          <h3 class="text-xl font-semibold">애니메이션 시너지</h3>
+          <p class="text-sm text-white/70">TV 애니, 게임, 2.5차원 무대가 음반과 라이브 성적을 끌어올립니다.</p>
+        </article>
+        <article class="rounded-3xl bg-white/5 border border-white/10 p-6 space-y-3 backdrop-blur-2xl shadow-[0_25px_90px_-45px_rgba(255,224,102,0.6)]">
+          <p class="text-xs tracking-[0.4em] uppercase text-sunset-yellow">Fandom</p>
+          <h3 class="text-xl font-semibold">서클 & 동인 문화</h3>
+          <p class="text-sm text-white/70">코미케, 동인 음악, 현지 이벤트가 커뮤니티를 촘촘하게 연결합니다.</p>
+        </article>
+      </section>
+
+      <section class="rounded-[32px] bg-white/5 border border-white/10 px-8 py-10 space-y-8 shadow-[0_30px_120px_-50px_rgba(255,224,102,0.5)] backdrop-blur-2xl fade-in fade-delay-1">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <h2 class="text-3xl font-bold">시대별 키워드 & 대표 주자</h2>
+          <p class="text-white/60 text-sm">일본 팝의 흐름을 압축했습니다.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-12 bg-ocean-teal rounded-full shadow-[0_0_12px_rgba(45,212,191,0.6)]"></span>
+              <div>
+                <p class="text-xs uppercase tracking-[0.4em] text-white/50">1980~2000s</p>
+                <h3 class="text-2xl font-semibold">시티팝 & J-락</h3>
+              </div>
+            </div>
+            <ul class="space-y-3 text-sm text-white/80">
+              <li>YMO · TM NETWORK · B'z</li>
+              <li>신시사이저와 재즈 요소 결합</li>
+              <li>버블 경제의 도시 감성 반영</li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-12 bg-sunset-orange rounded-full shadow-[0_0_12px_rgba(255,142,114,0.5)]"></span>
+              <div>
+                <p class="text-xs uppercase tracking-[0.4em] text-white/50">2010s~Now</p>
+                <h3 class="text-2xl font-semibold">아이돌 & 버추얼</h3>
+              </div>
+            </div>
+            <ul class="space-y-3 text-sm text-white/80">
+              <li>AKB48 · YOASOBI · King Gnu</li>
+              <li>버추얼 싱어(Vocaloid)와 협업</li>
+              <li>해외 인기 급상승: 시티팝 리바이벌</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-[32px] bg-white/5 border border-white/10 p-10 space-y-8 backdrop-blur-2xl shadow-[0_35px_140px_-60px_rgba(91,228,255,0.5)] fade-in fade-delay-2">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2 space-y-4">
+            <p class="text-xs uppercase tracking-[0.4em] text-white/60">Definition</p>
+            <h2 class="text-3xl font-bold">J-POP의 DNA</h2>
+            <p class="text-white/80 text-sm leading-relaxed">
+              위키백과는 J-POP을 “일본 대중음악 산업 전반을 가리키는 말로, 전통 음악과 서구 음악의 혼합에서 출발해 아이돌·밴드·애니송을 포괄한다”고 소개합니다.
+              스토리와 캐릭터, 음악이 하나의 IP로 묶이는 것이 특징입니다.
+            </p>
+            <ul class="text-sm text-white/70 space-y-2">
+              <li>• 오리콘 차트와 레코드 대상</li>
+              <li>• 2.5차원 뮤지컬(2D 애니+3D 공연)</li>
+              <li>• 전국 투어 대신 지역 밀착 이벤트 다수</li>
+            </ul>
+          </div>
+          <div class="lg:w-1/2 space-y-4">
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-6 shadow-[0_25px_90px_-55px_rgba(255,79,216,0.5)]">
+              <p class="text-xs uppercase tracking-[0.4em] text-neon-blue">Influence</p>
+              <h3 class="text-2xl font-semibold mb-3">아시아 팝의 토양</h3>
+              <p class="text-sm text-white/80 leading-relaxed">
+                1990년대 J-POP은 아시아 각국 아이돌 시스템의 레퍼런스가 되었고, 최근엔 시티팝 리바이벌로 글로벌 스트리밍에서 재조명되고 있습니다.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_70px_-50px_rgba(255,224,102,0.6)]">
+              <h4 class="text-xl font-semibold text-sunset-yellow mb-2">핵심 키워드</h4>
+              <dl class="space-y-3 text-sm text-white/80">
+                <div class="flex justify-between gap-3">
+                  <dt class="text-white/60">오디션 시스템</dt>
+                  <dd>일본식 장기 육성</dd>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <dt class="text-white/60">애니메이션</dt>
+                  <dd>IP 제작의 중심</dd>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <dt class="text-white/60">버추얼 싱어</dt>
+                  <dd>보컬로이드/VTuber</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-[32px] bg-white/5 border border-white/10 p-10 space-y-8 backdrop-blur-2xl shadow-[0_35px_130px_-65px_rgba(59,130,246,0.55)] fade-in fade-delay-2">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.4em] text-white/60">Timeline</p>
+            <h2 class="text-3xl font-bold">연대기 스냅샷</h2>
+          </div>
+          <p class="text-sm text-white/70">J-POP을 대표하는 시점.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-4 text-sm text-white/80">
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">1980s</p>
+            <h3 class="text-xl font-semibold">시티팝 전성기</h3>
+            <p class="mt-2">YMO, 마츠토야 유미 등이 도시적 사운드 정립.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">1997</p>
+            <h3 class="text-xl font-semibold">Avex 아이돌 붐</h3>
+            <p class="mt-2">Hamasaki Ayumi 등 솔로 디바가 탄생.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">2005</p>
+            <h3 class="text-xl font-semibold">Vocaloid 등장</h3>
+            <p class="mt-2">하츠네 미쿠가 새로운 창작 생태계를 형성.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">2020s</p>
+            <h3 class="text-xl font-semibold">글로벌 시티팝 붐</h3>
+            <p class="mt-2">Spotify·YouTube에서 레트로 사운드 재발견.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="rounded-[32px] bg-white/5 border border-white/10 p-10 space-y-10 backdrop-blur-2xl shadow-[0_35px_140px_-70px_rgba(255,224,102,0.55)] fade-in fade-delay-3">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.4em] text-white/60">Industry</p>
+            <h2 class="text-3xl font-bold">산업 구조</h2>
+          </div>
+          <p class="text-sm text-white/70">대형 기획사와 제작위원회, 팬 커뮤니티가 협업.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6 space-y-3">
+            <p class="text-xs uppercase tracking-[0.3em] text-neon-purple">Agencies</p>
+            <h3 class="text-xl font-semibold">Johnny's · LDH · SACRA</h3>
+            <p class="text-sm text-white/70">남녀 아이돌 그룹과 댄스 퍼포먼스 중심 제작.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6 space-y-3">
+            <p class="text-xs uppercase tracking-[0.3em] text-ocean-teal">Media Mix</p>
+            <h3 class="text-xl font-semibold">애니 · 게임 · 뮤지컬</h3>
+            <p class="text-sm text-white/70">작품별 제작위원회가 크로스미디어 전략을 주도.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6 space-y-3">
+            <p class="text-xs uppercase tracking-[0.3em] text-sunset-yellow">Fan Economy</p>
+            <h3 class="text-xl font-semibold">굿즈 & 이벤트</h3>
+            <p class="text-sm text-white/70">체험형 이벤트(악수회, 온라인 팬미팅)로 충성도 강화.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-r from-white/10 via-transparent to-white/10 p-6 text-sm text-white/80 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p>“J-POP은 캐릭터·스토리·음악이 통합된 IP 산업”</p>
+          <a
+            href="https://ko.wikipedia.org/wiki/J-POP"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition"
+          >
+            위키백과 문서 읽기 ↗
+          </a>
+        </div>
+      </section>
+
+      <section class="grid md:grid-cols-2 gap-6 items-center fade-in fade-delay-3">
+        <div class="rounded-3xl bg-white/5 border border-white/10 p-8 space-y-5 backdrop-blur-2xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.5)]">
+          <p class="text-xs uppercase tracking-[0.4em] text-white/70">Impact</p>
+          <h2 class="text-3xl font-bold">세계가 사랑하는 이유</h2>
+          <ul class="space-y-3 text-sm text-white/80">
+            <li>• 캐릭터 중심 스토리텔링</li>
+            <li>• 섬세한 코드 진행과 멜로디</li>
+            <li>• 애니메이션·게임과의 강력한 시너지</li>
+            <li>• 동인·팬 제작 문화의 폭발력</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl bg-white/5 border border-white/10 p-8 space-y-6 backdrop-blur-2xl shadow-[0_25px_90px_-50px_rgba(255,224,102,0.6)]">
+          <h3 class="text-2xl font-semibold text-sunset-yellow">지금 듣기 좋은 플레이리스트</h3>
+          <ol class="space-y-4 text-sm text-white/80 list-decimal list-inside">
+            <li>YOASOBI - 아이들</li>
+            <li>Aimer - Brave Shine</li>
+            <li>Official髭男dism - Pretender</li>
+            <li>King Gnu - Specialz</li>
+            <li>Perfume - Spending all my time</li>
+          </ol>
+          <a
+            href="#"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-sunset-yellow text-slate-900 font-bold hover:bg-white transition shadow-[0_10px_30px_-10px_rgba(255,224,102,0.7)]"
+          >
+            플레이리스트 열기
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <footer
+        class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-white/70 shadow-[0_25px_80px_-50px_rgba(91,228,255,0.4)] fade-in fade-delay-4"
+      >
+        <p class="text-white/80">© 2025 POP Mosaic · Japanese Pop Culture Insight</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-sunset-yellow transition">인스타그램</a>
+          <a href="#" class="hover:text-ocean-teal transition">유튜브</a>
+          <a href="#" class="hover:text-neon-pink transition">뉴스레터</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
+
